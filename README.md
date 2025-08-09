@@ -82,11 +82,11 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 ### Screenshots
 
 1. ![<img width="1920" height="1080" alt="Screenshot 1" src="https://github.com/user-attachments/assets/e2e94a29-1d66-428c-a64e-b27db4a587e0" />
-](Assets/Screenshot1.png)  
+]](Assets/Screenshot1.png)  
    *Realtime smile count*
 
 2. ![<img width="1920" height="1080" alt="Screenshot 2" src="https://github.com/user-attachments/assets/a9ffaec5-1fcf-49be-b209-26409c5b8ea6" />
-](Assets/Screenshot2.png)  
+]](Assets/Screenshot2.png)  
    *Real-time smile count overlay on video feed*
 
 3. ![<img width="1920" height="1080" alt="Screenshot 3" src="https://github.com/user-attachments/assets/a0a433bc-4270-48ae-a477-c37dde45744d" />
@@ -109,11 +109,11 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 ### Build Photos
 
 - ![<img width="1109" height="577" alt="Screenshot 4" src="https://github.com/user-attachments/assets/b0cae5c0-6b13-4eb3-bc74-e5ed10614899" />
-](Assets/Screenshot4.png)  
+]](Assets/Screenshot4.png)  
   *JS codes*
 
 - ![<img width="1046" height="458" alt="Screenshot 5" src="https://github.com/user-attachments/assets/a9112608-a79a-44d4-8c71-b6ea48661ec2" />
-](Assets/Screenshot5.png)  
+]](Assets/Screenshot5.png)  
   *Live demo environment showing smile detection in action*
 
 ---
