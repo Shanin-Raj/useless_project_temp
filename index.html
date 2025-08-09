@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smile Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Smile Count: <span id="smile-count">0</span></h1>
+        <p>Upload a video of a person smiling to begin the analysis.</p>
+        <input type="file" id="video-upload" accept="video/*">
+        <video id="video-player" width="720" height="560" controls muted></video>
+    </div>
+</body>
+</html>
