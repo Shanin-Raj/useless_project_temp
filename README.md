@@ -100,28 +100,15 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 ---
 
 ## Hardware
-
-### Schematic & Circuit
-
-- ![Circuit](Add your circuit diagram here)  
-  *Add caption explaining connections*
-
-- ![Schematic](Add your schematic diagram here)  
-  *Add caption explaining the schematic*
+[none]
 
 ### Build Photos
 
 - ![Assets/Screenshot4.png](Assets/Screenshot4.png)  
-  *Prototype setup with webcam and laptop*
+  *JS codes*
 
 - ![Assets/Screenshot5.png](Assets/Screenshot5.png)  
   *Live demo environment showing smile detection in action*
-
-- ![Build](Add photos of build process here)  
-  *Explain the build steps*
-
-- ![Final](Add photo of final product here)  
-  *Explain the final build*
 
 ---
 
@@ -134,7 +121,7 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 
 ### Additional Demos
 
-- [Add any extra demo materials/links]
+- [None]
 
 ---
 
