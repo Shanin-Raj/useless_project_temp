@@ -1,102 +1,152 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
+# Prof-alytics 🎯
 
-# [Project Name] 🎯
-
-
-## Basic Details
-### Team Name: [Name]
-
-
-### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
-
-### Project Description
-[2-3 lines about what your project does]
-
-### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
-
-### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
-
-## Technical Details
-### Technologies/Components Used
-For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
-
-### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
-
-### Project Documentation
-For Software:
-
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+## Table of Contents
+- [Basic Details](#basic-details)
+- [Team Members](#team-members)
+- [Project Description](#project-description)
+- [The Problem](#the-problem)
+- [The Solution](#the-solution)
+- [Technical Details](#technical-details)
+  - [Technologies/Components Used](#technologiescomponents-used)
+  - [Implementation](#implementation)
+- [Project Documentation](#project-documentation)
+  - [Screenshots](#screenshots)
+  - [Diagrams](#diagrams)
+  - [Hardware](#hardware)
+    - [Schematic & Circuit](#schematic--circuit)
+    - [Build Photos](#build-photos)
+- [Project Demo](#project-demo)
+- [Team Contributions](#team-contributions)
+- [Badges](#badges)
 
 ---
-Made with ❤️ at TinkerHub Useless Projects 
 
-![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
-![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
+## Basic Details
 
+### Team Name
+**Useless Genius**
+
+### Team Members
+- **Team Lead:** Shanin Raj M (College of Engineering Thalassery)
+- **Member 2:** Sivasangeerth U (College of Engineering Thalassery)
+
+---
+
+## Project Description
+
+Prof-alytics is a revolutionary Ed-Tech platform. It addresses the critical, unaddressed problem in modern education: the inability to quantify an instructor's happiness in real-time.
+
+### The Problem
+For too long, universities have relied on subjective student feedback. Our platform provides a data-driven solution.
+
+### The Solution
+Using a sophisticated AI engine to analyze a video feed and provide the first-ever KPI for classroom engagement: the Smile Count.
+
+---
+
+## Technical Details
+
+### Technologies/Components Used
+
+**Software**
+- Languages: HTML5, CSS3, JavaScript
+- Libraries: face-api.js
+- Tools: VS Code, Git, Live Server
+
+**Hardware**
+- Webcam (for video input)
+
+### Implementation
+
+#### Installation
+
+1. **Clone the repo (or download the files):**
+   ```bash
+   git clone https://github.com/your_username/your_project_name.git
+   ```
+2. **Download the AI models:**  
+   Ensure the `weights` folder from face-api.js is in the root of your project directory.
+
+#### Run
+
+- Run with a Local Server. This project must be run from a local server to avoid browser security (CORS) errors.
+- The easiest way is with the "Live Server" extension in VS Code.
+- Right-click on `index.html` and choose **Open with Live Server**.
+
+---
+
+## Project Documentation
+
+### Screenshots
+
+1. ![Assets/Screenshot1.png](Assets/Screenshot1.png)  
+   *Realtime smile count*
+
+2. ![Assets/Screenshot2.png](Assets/Screenshot2.png)  
+   *Real-time smile count overlay on video feed*
+
+3. ![Assets/Screenshot3.png](Assets/Screenshot3.png)  
+   *Summary of smile analytics after video processing*
+
+---
+
+### Diagrams
+
+![Workflow](Add your workflow/architecture diagram here)  
+*Add caption explaining your workflow*
+
+---
+
+## Hardware
+
+### Schematic & Circuit
+
+- ![Circuit](Add your circuit diagram here)  
+  *Add caption explaining connections*
+
+- ![Schematic](Add your schematic diagram here)  
+  *Add caption explaining the schematic*
+
+### Build Photos
+
+- ![Assets/Screenshot4.png](Assets/Screenshot4.png)  
+  *Prototype setup with webcam and laptop*
+
+- ![Assets/Screenshot5.png](Assets/Screenshot5.png)  
+  *Live demo environment showing smile detection in action*
+
+- ![Build](Add photos of build process here)  
+  *Explain the build steps*
+
+- ![Final](Add photo of final product here)  
+  *Explain the final build*
+
+---
+
+## Project Demo
+
+### Video
+
+- [Add your demo video link here]  
+  *Explain what the video demonstrates*
+
+### Additional Demos
+
+- [Add any extra demo materials/links]
+
+---
+
+## Team Contributions
+
+- **Shanin Raj M:** [Prototype Building.]
+- **Sivasangeerth U:** [Testing and Presentation]
+
+---
+
+## Badges
+
+Made with ❤️ at TinkerHub Useless Projects
 
 
