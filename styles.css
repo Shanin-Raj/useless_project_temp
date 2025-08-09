@@ -1,20 +1,78 @@
 body {
-    background-color: #282c34;
-    color: white;
-    font-family: sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
     text-align: center;
 }
-.container {
+
+.app-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
 }
-h1 { font-size: 4rem; }
-video {
-    border: 4px solid #61dafb;
-    margin-top: 20px;
+
+h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+#smile-count {
+    color: #4caf50; /* Green for smiles */
+}
+
+#loading-message {
+    color: #aaa;
+}
+
+input[type="file"] {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="file"]:hover {
+    background-color: #444;
+}
+
+input[type="file"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* --- Crucial Positioning for Overlay --- */
+.video-wrapper {
+    position: relative;
+    max-width: 720px; /* Limit video size for performance */
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden; /* Hide anything that spills out */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background-color: #000;
+}
+
+#video-player {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes bottom space under video */
+}
+
+#overlay-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to go through to the video player controls */
 }

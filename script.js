@@ -1,69 +1,127 @@
-/**
- * Prof-alytics - Video Upload Version
- * This script loads a video file, runs face and expression detection,
- * and counts the number of smiles.
- */
-
-// Get references to our HTML elements
+// Get DOM Elements
 const videoUpload = document.getElementById('video-upload');
 const videoPlayer = document.getElementById('video-player');
-const smileCountElement = document.getElementById('smile-count');
+const overlayCanvas = document.getElementById('overlay-canvas');
+const smileCountSpan = document.getElementById('smile-count');
+const loadingMessage = document.getElementById('loading-message');
 
+// State Variables
 let smileCount = 0;
-// This "state" variable is crucial. It prevents us from counting
-// one long smile as hundreds of individual smiles.
-let isSmiling = false; 
+let isSmiling = false; // Tracks the state to count a smile only once
+const SMILE_THRESHOLD = 0.90; // Confidence threshold for a "happy" expression
 
-// --- 1. Load the AI Models ---
-// We need to load the pre-trained models before we can do any detection.
-// --- EDIT: Changed '/models' to '/weights' to match the downloaded folder ---
-Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('/weights'),
-    faceapi.nets.faceExpressionNet.loadFromUri('/weights')
-]).then(() => {
-    console.log("AI Models Loaded Successfully!");
-    // You could enable a button here to show the user it's ready.
-});
+/**
+ * 1. Load AI Models from the /weights folder
+ */
+async function loadModels() {
+    const MODEL_URL = './weights';
+    try {
+        await Promise.all([
+            faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
+            faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
+        ]);
+        console.log("AI Models Loaded Successfully! ✅");
+        loadingMessage.textContent = "Models loaded! Please upload a video.";
+        videoUpload.disabled = false; // Enable upload button
+    } catch (error) {
+        console.error("Error loading models:", error);
+        loadingMessage.textContent = "Error loading AI models. Please refresh the page.";
+    }
+}
 
-// --- 2. Handle Video Upload ---
-// This function runs when the user selects a video file.
+// Load models as soon as the script runs
+loadModels();
+
+/**
+ * 2. Handle the video file upload
+ */
 videoUpload.addEventListener('change', (event) => {
-    // Reset the counter for the new video
-    smileCount = 0;
-    smileCountElement.textContent = smileCount;
-
-    // Get the video file and create a temporary URL for it
     const file = event.target.files[0];
     if (file) {
         const videoUrl = URL.createObjectURL(file);
-        // Set the video player's source to the uploaded file
         videoPlayer.src = videoUrl;
+        videoPlayer.load(); // Important to make controls visible
+        resetSmileCounter();
     }
 });
 
+/**
+ * Resets the counter and state for a new video
+ */
+function resetSmileCounter() {
+    smileCount = 0;
+    isSmiling = false;
+    smileCountSpan.textContent = '0';
+    const ctx = overlayCanvas.getContext('2d');
+    ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+}
 
+/**
+ * 3. Start detection when the user plays the video
+ */
 videoPlayer.addEventListener('play', () => {
+    // Match canvas dimensions to the video's display size
+    const displaySize = { width: videoPlayer.clientWidth, height: videoPlayer.clientHeight };
+    faceapi.matchDimensions(overlayCanvas, displaySize);
+
     const detectionInterval = setInterval(async () => {
+        // Stop detection if video is paused or has ended
         if (videoPlayer.paused || videoPlayer.ended) {
-            clearInterval(detectionInterval);
+            isSmiling = false; // Reset smiling state when paused
             return;
         }
 
-        const detections = await faceapi.detectAllFaces(videoPlayer, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions();
-        
-        // --- This is the new smile-counting logic ---
-        if (detections.length > 0) {
-            const happiness = detections[0].expressions.happy;
+        /**
+         * 4. Core Detection Loop
+         */
+        const detections = await faceapi.detectAllFaces(
+            videoPlayer,
+            new faceapi.TinyFaceDetectorOptions()
+        ).withFaceExpressions();
 
-            if (happiness > 0.85 && !isSmiling) {
-                smileCount++;
-                smileCountElement.textContent = smileCount;
-                isSmiling = true;
+        const resizedDetections = faceapi.resizeResults(detections, displaySize);
+        const ctx = overlayCanvas.getContext('2d');
+        ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+
+        let isAnyFaceSmiling = false;
+
+        /**
+         * 5. Visualization: Draw boxes and labels
+         */
+        resizedDetections.forEach(detection => {
+            const box = detection.detection.box;
+            const happyScore = detection.expressions.happy;
+            const isCurrentlyHappy = happyScore > SMILE_THRESHOLD;
+
+            if (isCurrentlyHappy) {
+                isAnyFaceSmiling = true;
             }
 
-            if (happiness < 0.5 && isSmiling) {
-                isSmiling = false;
-            }
+            // Draw box: Green for "happy", red otherwise
+            const boxColor = isCurrentlyHappy ? '#4caf50' : '#f44336';
+            const label = `Happy: ${Math.round(happyScore * 100)}%`;
+            const drawBox = new faceapi.draw.DrawBox(box, { label, boxColor });
+            drawBox.draw(overlayCanvas);
+        });
+
+        /**
+         * 6. Smile Counting Logic
+         */
+        // A new smile is counted ONLY on the transition from not-smiling to smiling.
+        if (isAnyFaceSmiling && !isSmiling) {
+            isSmiling = true; // Set state to smiling
+            smileCount++;
+            smileCountSpan.textContent = smileCount;
         }
-    }, 200); 
+        // Reset the state when no faces are smiling confidently
+        else if (!isAnyFaceSmiling && isSmiling) {
+            isSmiling = false;
+        }
+
+    }, 200); // Run detection every 200 milliseconds
+});
+
+// Reset smile state when video ends to be ready for replay
+videoPlayer.addEventListener('ended', () => {
+    isSmiling = false;
 });

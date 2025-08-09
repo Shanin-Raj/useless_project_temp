@@ -2,17 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Smile Counter</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="face-api.min.js"></script>
-    <script defer src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile Counter AI 😊</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="app-container">
         <h1>Smile Count: <span id="smile-count">0</span></h1>
-        <p>Upload a video of a person smiling to begin the analysis.</p>
-        <input type="file" id="video-upload" accept="video/*">
-        <video id="video-player" width="720" height="560" controls muted></video>
+        <p id="loading-message">Loading AI models, please wait...</p>
+        <input type="file" id="video-upload" accept="video/*" disabled>
+
+        <div class="video-wrapper">
+            <video id="video-player" controls muted playsinline></video>
+            <canvas id="overlay-canvas"></canvas>
+        </div>
     </div>
+
+    <script src="face-api.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
