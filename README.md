@@ -35,15 +35,13 @@
 ---
 
 ## Project Description
-
-Prof-alytics is a revolutionary Ed-Tech platform. It addresses the critical, unaddressed problem in modern education: the inability to quantify an instructor's happiness in real-time.
+Prof-alytics is a revolutionary Ed-Tech platform built for the "Useless Hackathon." It uses a browser-native AI to analyze an instructor's facial expressions from a video, providing the first-ever quantifiable metric for classroom happiness: the Smile Count. Our platform visualizes the AI's findings in real-time, turning a subjective feeling into hard, useless data.
 
 ### The Problem
-For too long, universities have relied on subjective student feedback. Our platform provides a data-driven solution.
+For decades, university administrators have been flying blind, relying on subjective metrics like "student feedback" and "exam results." They have no real, hard data on the most crucial KPI of all: is the professor actually happy to be there? This leads to a crisis of unquantified sentiment and suboptimal faculty morale.
 
 ### The Solution
-Using a sophisticated AI engine to analyze a video feed and provide the first-ever KPI for classroom engagement: the Smile Count.
-
+Prof-alytics provides a robust, data-driven solution. By leveraging a sophisticated, browser-native AI engine, our platform analyzes an instructor's facial expressions in real-time, providing the first-ever quantifiable metric for classroom happiness: the Smile Count. Now, for the first time, we can attach KPIs to joy.
 ---
 
 ## Technical Details
@@ -54,6 +52,7 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 - Languages: HTML5, CSS3, JavaScript
 - Libraries: face-api.js
 - Tools: VS Code, Git, Live Server
+- To publish website: Versal 
 
 **Hardware**
 - Webcam (for video input)
@@ -74,6 +73,7 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 - Run with a Local Server. This project must be run from a local server to avoid browser security (CORS) errors.
 - The easiest way is with the "Live Server" extension in VS Code.
 - Right-click on `index.html` and choose **Open with Live Server**.
+- Use website link to check demo with your recording
 
 ---
 
@@ -81,30 +81,26 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 
 ### Screenshots
 
-1. ![<img width="1920" height="1080" alt="Screenshot 1" src="https://github.com/user-attachments/assets/e2e94a29-1d66-428c-a64e-b27db4a587e0" />
-]](Assets/Screenshot1.png)  
-   *Realtime smile count*
+1.<img width="1920" height="1020" alt="uselessinterface" src="https://github.com/user-attachments/assets/381f3529-b833-49a3-b599-49ac7acf52fc" />
+  *The main interface of the application, ready for a video upload.*
 
-2. ![<img width="1920" height="1080" alt="Screenshot 2" src="https://github.com/user-attachments/assets/a9ffaec5-1fcf-49be-b209-26409c5b8ea6" />
-]](Assets/Screenshot2.png)  
+2. <img width="1920" height="1080" alt="Screenshot 2" src="https://github.com/user-attachments/assets/1752aba4-91ff-4034-b1a5-c5b33a6c106c" />
    *Real-time smile count overlay on video feed*
 
-3. ![<img width="1920" height="1080" alt="Screenshot 3" src="https://github.com/user-attachments/assets/a0a433bc-4270-48ae-a477-c37dde45744d" />
-]
-](Assets/Screenshot3.png)  
+3. <img width="1920" height="1080" alt="Screenshot 1" src="https://github.com/user-attachments/assets/9ccc3385-fdc0-4472-8f3e-3a4bcd4e3b03" />
    *Summary of smile analytics after video processing*
 
 ---
 
 ### Diagrams
+  
+*A simple workflow: A user uploads a video, which is processed by the face-api.js engine. The script then analyzes expressions, updates the smile count, and draws visualizations on the canvas overlay.*
 
-![Workflow](Add your workflow/architecture diagram here)  
-*Add caption explaining your workflow*
 
 ---
 
-## Hardware
-[none]
+## Website Link
+[http://useless-project-sigma.vercel.app/]
 
 ### Build Photos
 
@@ -122,7 +118,7 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 
 ### Video
 
-- [Add your demo video link here]  
+ -[  ]  
   *Explain what the video demonstrates*
 
 ### Additional Demos
@@ -133,8 +129,8 @@ Using a sophisticated AI engine to analyze a video feed and provide the first-ev
 
 ## Team Contributions
 
-- **Shanin Raj M:** [Prototype Building.]
-- **Sivasangeerth U:** [Testing and Presentation]
+- **Shanin Raj M:** [Lead development, project management, debugging, and implementation of the core AI logic using face-api.js.]
+- **Sivasangeerth U:** [UI/UX design, front-end development (HTML/CSS), testing, and Presentation.]
 
 ---
 
